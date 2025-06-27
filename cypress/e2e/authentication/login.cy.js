@@ -23,7 +23,7 @@ describe("Funcionalidade Login", () => {
 
     cy.get("h3").should(
       "contain.text",
-      "user and senha do not match any user"
+      "Username and password do not match any user in this service"
     );
   });
 
@@ -38,7 +38,7 @@ describe("Funcionalidade Login", () => {
 
     cy.get("h3").should(
       "contain.text",
-      "user and senha do not match any user"
+      "Username and password do not match any user in this service"
     );
   });
 
@@ -49,7 +49,7 @@ describe("Funcionalidade Login", () => {
 
     cy.get("#login-button").click();
 
-    cy.get("h3").should("contain.text", "user is required");
+    cy.get("h3").should("contain.text", "Username is required");
   });
 
   it("Mostrar erro quando o campo senha estiver vazio", () => {
@@ -59,6 +59,6 @@ describe("Funcionalidade Login", () => {
 
     cy.get("#login-button").click();
     
-    cy.get("h3").should("contain.text", "senha is required");
+    cy.get("h3").should("contain.text", "Password is required");
   });
 });

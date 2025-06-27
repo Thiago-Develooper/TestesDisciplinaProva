@@ -51,7 +51,7 @@ describe("Checkout", () => {
       .then((text) => {
         const normalizedText = text.replace(/\s+/g, " ").trim();
         
-        const expectedText = "Your order is on its way, racing toward you as fast as the pony can trot!";
+        const expectedText = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";
         expect(normalizedText).to.eq(expectedText);
       });
   });
