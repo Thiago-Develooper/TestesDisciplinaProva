@@ -1,4 +1,4 @@
-describe("Fluxo de Checkout", () => {
+describe("Checkout", () => {
   beforeEach(() => {
     cy.visit("https://www.saucedemo.com/v1/");
 
@@ -13,11 +13,11 @@ describe("Fluxo de Checkout", () => {
     cy.get(":nth-child(2) > .pricebar > .btn_primary").click();
   });
 
-  it("Deve iniciar o processo de checkout", () => {
+  it("Tem que iniciar o processo de checkout", () => {
     cy.get(".shopping_cart_link").click();
   });
 
-  it("Deve preencher os dados obrigatórios do checkout", () => {
+  it("Tem que preencher dados necessários para ocorrer o checkout", () => {
     cy.get(".shopping_cart_link").click();
     
     cy.get(".btn_action").click();
@@ -31,7 +31,7 @@ describe("Fluxo de Checkout", () => {
     cy.get(".btn_primary").click();
   });
 
-  it("Finaliza a compra e verifica mensagem de confirmação", () => {
+  it("Termina a compra e checa se tem mensagem de confirmação", () => {
     cy.get(".shopping_cart_link").click();
     
     cy.get(".btn_action").click();
@@ -50,8 +50,8 @@ describe("Fluxo de Checkout", () => {
       .invoke("text")
       .then((text) => {
         const normalizedText = text.replace(/\s+/g, " ").trim();
-        const expectedText =
-          "Your order has been dispatched, and will arrive just as fast as the pony can get there!";
+        
+        const expectedText = "Your order is on its way, racing toward you as fast as the pony can trot!";
         expect(normalizedText).to.eq(expectedText);
       });
   });

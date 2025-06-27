@@ -1,4 +1,4 @@
-describe('Carrinho de compras', () => {
+describe('Carrinho', () => {
   beforeEach(() => {
     cy.visit('https://www.saucedemo.com/v1/');
 
@@ -9,7 +9,7 @@ describe('Carrinho de compras', () => {
     cy.get('#login-button').click();
   });
 
-  it('Adiciona dois produtos no carrinho', () => {
+  it('add dois produtos carrinho', () => {
     cy.get(':nth-child(1) > .pricebar > .btn_primary').click();
 
     cy.get(':nth-child(2) > .pricebar > .btn_primary').click();

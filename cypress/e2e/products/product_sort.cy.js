@@ -1,4 +1,4 @@
-describe('Ordenação de Produtos', () => {
+describe('Ordem de produtos', () => {
   beforeEach(() => {
     cy.visit('https://www.saucedemo.com/v1/');
     

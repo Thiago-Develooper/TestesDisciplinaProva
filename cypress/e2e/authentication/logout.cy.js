@@ -1,4 +1,4 @@
-describe("Funcionalidade de Logout", () => {
+describe("func de Logout", () => {
   beforeEach(() => {
     cy.visit("https://www.saucedemo.com/v1/");
 
@@ -9,7 +9,7 @@ describe("Funcionalidade de Logout", () => {
     cy.get("#login-button").click();
   });
 
-  it("Deve realizar logout com sucesso", () => {
+  it("Logout com sucesso", () => {
     cy.get(".bm-burger-button > button").click();
 
     cy.get("#logout_sidebar_link").click();

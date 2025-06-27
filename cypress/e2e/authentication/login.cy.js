@@ -1,5 +1,5 @@
 describe("Funcionalidade Login", () => {
-  it("Deve realizar login com sucesso", () => {
+  it("tem que fazer Login com sucesso", () => {
     cy.visit("https://www.saucedemo.com/v1/");
 
     cy.get("#user-name").type("standard_user");
@@ -12,7 +12,7 @@ describe("Funcionalidade Login", () => {
 
   });
 
-  it("Tenta login com usuário incorreto", () => {
+  it("Login com usuário incorreto", () => {
     cy.visit("https://www.saucedemo.com/v1/");
 
     cy.get("#user-name").type("standard");
@@ -23,11 +23,11 @@ describe("Funcionalidade Login", () => {
 
     cy.get("h3").should(
       "contain.text",
-      "Username and password do not match any user in this service"
+      "user and senha do not match any user"
     );
   });
 
-  it("Tenta login com senha errada", () => {
+  it("Login com senha incorreta", () => {
     cy.visit("https://www.saucedemo.com/v1/");
 
     cy.get("#user-name").type("standard_user");
@@ -38,27 +38,27 @@ describe("Funcionalidade Login", () => {
 
     cy.get("h3").should(
       "contain.text",
-      "Username and password do not match any user in this service"
+      "user and senha do not match any user"
     );
   });
 
-  it("Deve exibir erro quando o campo usuário estiver vazio", () => {
+  it("Mostrar erro quando o campo usuário estiver vazio", () => {
     cy.visit("https://www.saucedemo.com/v1/");
 
     cy.get("#password").type("secret_sauce");
 
     cy.get("#login-button").click();
 
-    cy.get("h3").should("contain.text", "Username is required");
+    cy.get("h3").should("contain.text", "user is required");
   });
 
-  it("Deve exibir erro quando o campo senha estiver vazio", () => {
+  it("Mostrar erro quando o campo senha estiver vazio", () => {
     cy.visit("https://www.saucedemo.com/v1/");
 
     cy.get("#user-name").type("standard_user");
 
     cy.get("#login-button").click();
     
-    cy.get("h3").should("contain.text", "Password is required");
+    cy.get("h3").should("contain.text", "senha is required");
   });
 });

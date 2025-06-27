@@ -1,4 +1,4 @@
-describe('Lista de Produtos', () => {
+describe('Lista Produtos', () => {
   beforeEach(() => {
     cy.visit('https://www.saucedemo.com/v1/');
     
@@ -9,7 +9,7 @@ describe('Lista de Produtos', () => {
     cy.get('#login-button').click();
   });
 
-  it('Confirma que a lista de produtos está visível e contém itens', () => {
+  it("Garante que a lista de produtos está visível e preenchida com itens.", () => {
     cy.get('.inventory_list').should('be.visible');
     
     cy.get('.inventory_item').its('length').should('be.greaterThan', 0);
